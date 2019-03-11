@@ -1,6 +1,8 @@
 import Foundation
 /*
- A protocal defines a blueprint of methods, properties and other requirements that suit a particular task or piece od functionality, and can be adopted by a class, structure, or enumeration. Any type that satisfies the requirements of a protocol is said to confrom to that protocol
+ A protocal defines a blueprint of methods, properties and other requirements that suit a particular 
+ task or piece od functionality, and can be adopted by a class, structure, or enumeration. Any type 
+ hat satisfies the requirements of a protocol is said to confrom to that protocol.
  */
 
 //Syntax
@@ -49,7 +51,8 @@ func testPropertyRequirement()  {
 }
 //Method Requirements
 /*
- Protocol can require specific methods and type methods to be implmented by conforming types.Default values can not be specified for method parameters with in a protocol definition.
+ Protocol can require specific methods and type methods to be implmented by conforming types.
+ Default values can not be specified for method parameters with in a protocol definition.
  */
 
 protocol RandomNumberGenerator {
@@ -134,7 +137,11 @@ func tsetProtocolAsType()  {
 }
 //Delegation
 /*
- Delegation is a desigh pattern that enables a class or structure to hand ogg or delegate some of its responsibilites to an instance of an another type. This design pattern is implemented by defining a protocol that encapsulates  the delegated responsibilities, such that a conforming type (known as delegate) is guaranteed to provide the functionality that has been delegated. Delegate can be used to respond to a particular action, or to retrive data from an external data source.
+ Delegation is a desigh pattern that enables a class or structure to hand ogg or delegate some 
+ of its responsibilites to an instance of an another type. This design pattern is implemented by 
+ defining a protocol that encapsulates  the delegated responsibilities, such that a conforming 
+ type (known as delegate) is guaranteed to provide the functionality that has been delegated. 
+ Delegate can be used to respond to a particular action, or to retrive data from an external data source.
  */
 
 protocol DiceGame {
@@ -289,7 +296,8 @@ func testProtocolComposition()  {
 //Checking for Protocol Confromance
 /*
  (1)The is operator returns true if an instance confrom to an protocol and returns false if it doesn't.
- (2)The as? version of the downcast operator returns an optional value of the protocols type, and its value is nil if the instance doesn't confrom the protocol.
+ (2)The as? version of the downcast operator returns an optional value of the protocols type, and its 
+    value is nil if the instance doesn't confrom the protocol.
  (3)he as! version of the downcast operator froces downcast to the protocol type and trigger a runtime error if the downcast doesn't succeed.
  */
 

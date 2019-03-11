@@ -1,5 +1,8 @@
 /*
- A enumeration defines a common type for group of related vlues and enables you to work with those values in a type-safety way within your code. You do not have to provide a raw value for enumeration. If you do, the value can be a string, character, a value of any integer or floating-point type. Enumeration cases can specify associated values of any type to be stored along with each different case value.
+ A enumeration defines a common type for group of related vlues and enables you to work with those 
+ values in a type-safety way within your code. You do not have to provide a raw value for enumeration.
+  If you do, the value can be a string, character, a value of any integer or floating-point type. Enumeration 
+  cases can specify associated values of any type to be stored along with each different case value.
  Features: computed properties;instance methods;initializers;to be extend;conform to protocols.
  Matching Enumeration values with a Switch Statement
  */
@@ -11,7 +14,8 @@ enum CompassDirection : CaseIterable {
 }
 
 /*Associated Value
- Constants and variables of type Barcode can store either a .upc  or a .qrCode with their associated values, but they can store only one of them at any given time.
+ Constants and variables of type Barcode can store either a .upc  or a .qrCode with their 
+ associated values, but they can store only one of them at any given time.
  */
 enum Barcode {
     case upc(Int,Int,Int,Int)
