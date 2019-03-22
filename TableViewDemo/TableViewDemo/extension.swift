@@ -11,35 +11,19 @@ import UIKit
 extension ViewController : UITableViewDataSource{
     // Provideing the Number of Rows and Sections
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        if section < 3 {
-        //            return numberOfRows[section]
-        //        } else {
-        //            return 1
-        //        }
-        return allItems.count
+        return nums.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        //        return 3
         return 1
     }
     
     //Providing Cells, Headers, and Footers
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
-        //        cell.textLabel?.text = "Section \(indexPath.section) Cell : \(indexPath.row)"
-        cell.textLabel?.text = "\(allItems[indexPath.row])"
+        cell.textLabel?.text = "\(nums[indexPath.row])"
         return cell
     }
-    
-    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        return "Section \(section) Header"
-    //    }
-    //
-    //    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-    //        return "Section \(section) Fotter"
-    //    }
-    
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
@@ -53,11 +37,7 @@ extension ViewController : UITableViewDataSource{
     //Inserting or Deleting
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            //            let rows = numberOfRows[indexPath.section]
-            //            if rows > 0 {
-            //                numberOfRows[indexPath.section] = rows - 1
-            //            }
-            allItems.removeLast()
+            nums.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .top)
         }
     }
@@ -73,14 +53,16 @@ extension ViewController : UITableViewDataSource{
         print("Remove Row")
     }
     
-    //Confighre an Index
-    //    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-    //        return sectionNames
-    //    }
-    //    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-    //        print("title = \(title)")
-    //        return 0
-    //    }
+    func configureDataSource() {
+        generateNumbers()
+        tableView?.reloadData()
+    }
+    func generateNumbers()  {
+        nums.removeAll()
+        for _ in 0..<10 {
+            nums.append(Int(arc4random_uniform(100)))
+        }
+    }
 }
 
 extension ViewController : UITableViewDelegate {

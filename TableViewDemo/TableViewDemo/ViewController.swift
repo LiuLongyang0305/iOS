@@ -9,9 +9,8 @@
 import UIKit
 class ViewController: UIViewController {
     var tableView : UITableView?
-    var numberOfRows = [3,5,8]
-    var sectionNames = ["Section 0","Section 1","Section 2"]
-    var allItems : [NSDate] = [NSDate]()
+    var nums : [Int] = [Int]()
+    
     var refreshControl : UIRefreshControl?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +33,8 @@ class ViewController: UIViewController {
         let queue = DispatchQueue.main
         let time = DispatchTime(uptimeNanoseconds: NSEC_PER_SEC)
         queue.asyncAfter(deadline: time) {
-            self.allItems.append(NSDate())
             self.refreshControl?.endRefreshing()
-            let indexOfNewRow =  IndexPath(row: self.allItems.count - 1, section: 0)
-            self.tableView?.insertRows(at: [indexOfNewRow], with: UITableView.RowAnimation.automatic)
+            self.configureDataSource()
         }
     }
 }
