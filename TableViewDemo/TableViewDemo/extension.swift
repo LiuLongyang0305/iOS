@@ -29,13 +29,13 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section) Header"
-    }
-
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Section \(section) Fotter"
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Section \(section) Header"
+//    }
+//
+//    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+//        return "Section \(section) Fotter"
+//    }
 
 
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -78,38 +78,33 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate{
         return 0
     }
     
-//    func newLabelwithTitle(title: String) -> UILabel {
-//        let label = UILabel()
-//        label.text = title
-//        label.backgroundColor = UIColor.clear
-//        label.sizeToFit()
-//        return label
-//    }
-//    func newheaderOrFooterWithText(text: String) -> UIView {
-//        let label = newLabelwithTitle(title: text)
-//        label.frame.origin.x += 10
-//        label.frame.origin.y += 5
-//        let resultFrame = CGRect(x: 0, y: 0, width: label.frame.size.width + 10, height: label.frame.size.height)
-//        let view = UIView(frame: resultFrame)
-//        view.addSubview(label)
-//        return view
-//    }
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        print("111")
-//        return newheaderOrFooterWithText(text: "Section: \(section) Header")
-//    }
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 30
-//    }
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        print("222")
-//        return newheaderOrFooterWithText(text: "Section: \(section) Footer")
-//    }
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 30
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
+    func newLabelwithTitle(title: String) -> UILabel {
+        let label = UILabel()
+        label.text = title
+        label.backgroundColor = UIColor.green
+        label.sizeToFit()
+        return label
+    }
+    func newheaderOrFooterWithText(text: String) -> UIView {
+        let label = newLabelwithTitle(title: text)
+        label.frame.origin.x += 10
+        label.frame.origin.y += 5
+        let resultFrame = CGRect(x: 0, y: 0, width: label.frame.size.width + 10, height: label.frame.size.height)
+        let view = UIView(frame: resultFrame)
+        view.addSubview(label)
+        return view
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return newheaderOrFooterWithText(text: "Section: \(section) Header")
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return newheaderOrFooterWithText(text: "Section: \(section) Footer")
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 30
+    }
 }
 

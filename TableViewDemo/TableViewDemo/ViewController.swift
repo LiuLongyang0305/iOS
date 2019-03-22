@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var tableView : UITableView?
     var numberOfRows = [3,5,8]
     var sectionNames = ["Section 0","Section 1","Section 2"]
+    var allItems : [NSDate] = [NSDate]()
+    var refreshControl : UIRefreshControl?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +21,7 @@ class ViewController: UIViewController {
         if let table = tableView {
             tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "identifier")
             tableView?.dataSource = self
+            tableView?.delegate = self
             view.addSubview(table)
         }
     }
