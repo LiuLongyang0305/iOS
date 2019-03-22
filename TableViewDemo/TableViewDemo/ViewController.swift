@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
     var tableView : UITableView?
     var numberOfRows = [3,5,8]
@@ -22,7 +21,23 @@ class ViewController: UIViewController {
             tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "identifier")
             tableView?.dataSource = self
             tableView?.delegate = self
+            
+            refreshControl = UIRefreshControl()
+            refreshControl?.addTarget(self, action: #selector(handleRefresh(sender:)), for: .valueChanged)
+            tableView?.addSubview(refreshControl!)
+            
             view.addSubview(table)
+        }
+    }
+    
+    @objc  func handleRefresh(sender: AnyObject)  {
+        let queue = DispatchQueue.main
+        let time = DispatchTime(uptimeNanoseconds: NSEC_PER_SEC)
+        queue.asyncAfter(deadline: time) {
+            self.allItems.append(NSDate())
+            self.refreshControl?.endRefreshing()
+            let indexOfNewRow =  IndexPath(row: self.allItems.count - 1, section: 0)
+            self.tableView?.insertRows(at: [indexOfNewRow], with: UITableView.RowAnimation.automatic)
         }
     }
 }
