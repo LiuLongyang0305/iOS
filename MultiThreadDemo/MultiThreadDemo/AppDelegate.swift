@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  DispatchDemo
+//  MultiThreadDemo
 //
-//  Created by liulongyang on 2019/3/22.
+//  Created by liulongyang on 2019/3/25.
 //  Copyright © 2019 liulongyang. All rights reserved.
 //
 
