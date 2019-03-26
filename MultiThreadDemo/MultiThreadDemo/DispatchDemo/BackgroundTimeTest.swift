@@ -15,12 +15,12 @@ extension ViewController {
     
     @objc func enterBack()  {
         let app = UIApplication.shared
-        var backtaskId = UIBackgroundTaskIdentifier(rawValue: 0)
-         backtaskId = app.beginBackgroundTask(withName: "BackgroundTask", expirationHandler: {
+        var backTaskId = UIBackgroundTaskIdentifier(rawValue: 0)
+         backTaskId = app.beginBackgroundTask(withName: "BackgroundTask", expirationHandler: {
             print("Havn't complete the task with three minutes!")
-            app.endBackgroundTask(backtaskId)
+            app.endBackgroundTask(backTaskId)
         })
-        if backtaskId == UIBackgroundTaskIdentifier.invalid {
+        if backTaskId == UIBackgroundTaskIdentifier.invalid {
             print("Current iOS version don't support background task!")
             return
         }
@@ -33,7 +33,7 @@ extension ViewController {
             DispatchQueue.main.sync {
                 print("Background task time remaining \(app.backgroundTimeRemaining)")
             }
-            app.endBackgroundTask(backtaskId)
+            app.endBackgroundTask(backTaskId)
         }
     }
 }

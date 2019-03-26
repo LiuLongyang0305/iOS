@@ -47,12 +47,12 @@ APP进入后台运行后，尚未完成的任务会被暂停。如果app有进�
 ```swift
 func enterBack()  {
         let app = UIApplication.shared
-        var backtaskId = UIBackgroundTaskIdentifier(rawValue: 0)
-         backtaskId = app.beginBackgroundTask(withName: "BackgroundTask", expirationHandler: {
+        var backTaskId = UIBackgroundTaskIdentifier(rawValue: 0)
+         backTaskId = app.beginBackgroundTask(withName: "BackgroundTask", expirationHandler: {
             print("Havn't complete the task with three minutes!")
-            app.endBackgroundTask(backtaskId)
+            app.endBackgroundTask(backTaskId)
         })
-        if backtaskId == UIBackgroundTaskIdentifier.invalid {
+        if backTaskId == UIBackgroundTaskIdentifier.invalid {
             print("Current iOS version don't support background task!")
             return
         }
@@ -65,7 +65,7 @@ func enterBack()  {
             DispatchQueue.main.sync {
                 print("Background task time remaining \(app.backgroundTimeRemaining)")
             }
-            app.endBackgroundTask(backtaskId)
+            app.endBackgroundTask(backTaskId)
         }
     }
 
