@@ -16,15 +16,24 @@ class ViewController: UIViewController {
     public var account: Account!
     public var drawMoney : UIButton!
     public var savingAccount : SavingAccount!
+    public var serialQueue : DispatchQueue!
+    public var concurrentQueue : DispatchQueue!
+    public var submitAsyncToSerialQueue : UIButton!
+    public var submitAsyncToConcurrentQueue : UIButton!
+    public var submitSyncToSerialQueue : UIButton!
+    public var submitSyncToConcurrentQueue : UIButton!
+    public var executeButton : UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //        testMultiThread()
         //        testExitThread()
         //        downloadImageByThread()
-//        testThreadPriority()
-//        testConcurrentDrawMoney()
-        testProducersAndConsumers() 
+        //        testThreadPriority()
+        //        testConcurrentDrawMoney()
+        //        testProducersAndConsumers()
+        //        testDispatchQueue()
+        initNoticicationCentre()
     }
     
     

@@ -19,6 +19,9 @@
 		DD74A05B2249DCD8003976C2 /* ThreadCommunacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74A05A2249DCD8003976C2 /* ThreadCommunacation.swift */; };
 		DD74A05D2249DDBA003976C2 /* ThreadBasics.md in Resources */ = {isa = PBXBuildFile; fileRef = DD74A05C2249DDBA003976C2 /* ThreadBasics.md */; };
 		DD74A05F2249EE72003976C2 /* ThreadSynchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74A05E2249EE72003976C2 /* ThreadSynchronization.swift */; };
+		DD74A065224A08CC003976C2 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74A064224A08CC003976C2 /* DispatchQueue.swift */; };
+		DD74A067224A2F60003976C2 /* BackgroundTimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74A066224A2F60003976C2 /* BackgroundTimeTest.swift */; };
+		DD74A069224A3901003976C2 /* DispatchBasics.md in Resources */ = {isa = PBXBuildFile; fileRef = DD74A068224A3901003976C2 /* DispatchBasics.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		DD74A05A2249DCD8003976C2 /* ThreadCommunacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCommunacation.swift; sourceTree = "<group>"; };
 		DD74A05C2249DDBA003976C2 /* ThreadBasics.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ThreadBasics.md; sourceTree = "<group>"; };
 		DD74A05E2249EE72003976C2 /* ThreadSynchronization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSynchronization.swift; sourceTree = "<group>"; };
+		DD74A064224A08CC003976C2 /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		DD74A066224A2F60003976C2 /* BackgroundTimeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimeTest.swift; sourceTree = "<group>"; };
+		DD74A068224A3901003976C2 /* DispatchBasics.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = DispatchBasics.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		DD74A03A2248894C003976C2 /* MultiThreadDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DD74A063224A084F003976C2 /* DispatchDemo */,
 				DD74A04F2249DA65003976C2 /* ThreadDemo */,
 				DD74A03B2248894C003976C2 /* AppDelegate.swift */,
 				DD74A03D2248894C003976C2 /* ViewController.swift */,
@@ -91,6 +98,16 @@
 				DD74A05A2249DCD8003976C2 /* ThreadCommunacation.swift */,
 			);
 			path = ThreadDemo;
+			sourceTree = "<group>";
+		};
+		DD74A063224A084F003976C2 /* DispatchDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DD74A068224A3901003976C2 /* DispatchBasics.md */,
+				DD74A064224A08CC003976C2 /* DispatchQueue.swift */,
+				DD74A066224A2F60003976C2 /* BackgroundTimeTest.swift */,
+			);
+			path = DispatchDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +171,7 @@
 				DD74A0462248894D003976C2 /* LaunchScreen.storyboard in Resources */,
 				DD74A0432248894D003976C2 /* Assets.xcassets in Resources */,
 				DD74A0412248894C003976C2 /* Main.storyboard in Resources */,
+				DD74A069224A3901003976C2 /* DispatchBasics.md in Resources */,
 				DD74A05D2249DDBA003976C2 /* ThreadBasics.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD74A067224A2F60003976C2 /* BackgroundTimeTest.swift in Sources */,
 				DD74A05F2249EE72003976C2 /* ThreadSynchronization.swift in Sources */,
 				DD74A03E2248894C003976C2 /* ViewController.swift in Sources */,
 				DD74A0552249DBCC003976C2 /* DownloadImage.swift in Sources */,
@@ -173,6 +192,7 @@
 				DD74A03C2248894C003976C2 /* AppDelegate.swift in Sources */,
 				DD74A0572249DC04003976C2 /* ThreadPriority.swift in Sources */,
 				DD74A0512249DADF003976C2 /* multiThread.swift in Sources */,
+				DD74A065224A08CC003976C2 /* DispatchQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
