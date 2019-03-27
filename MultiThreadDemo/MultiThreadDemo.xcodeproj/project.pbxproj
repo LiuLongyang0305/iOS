@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1CA304224B18C100D5BDD0 /* LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CA303224B18C100D5BDD0 /* LoadImage.swift */; };
+		DD1CA306224B230300D5BDD0 /* LoadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CA305224B230300D5BDD0 /* LoadImageOperation.swift */; };
+		DD1CA308224B558900D5BDD0 /* OperationBasics.md in Resources */ = {isa = PBXBuildFile; fileRef = DD1CA307224B558900D5BDD0 /* OperationBasics.md */; };
 		DD74A03C2248894C003976C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74A03B2248894C003976C2 /* AppDelegate.swift */; };
 		DD74A03E2248894C003976C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD74A03D2248894C003976C2 /* ViewController.swift */; };
 		DD74A0412248894C003976C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD74A03F2248894C003976C2 /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD1CA303224B18C100D5BDD0 /* LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImage.swift; sourceTree = "<group>"; };
+		DD1CA305224B230300D5BDD0 /* LoadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageOperation.swift; sourceTree = "<group>"; };
+		DD1CA307224B558900D5BDD0 /* OperationBasics.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OperationBasics.md; sourceTree = "<group>"; };
 		DD74A0382248894C003976C2 /* MultiThreadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiThreadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD74A03B2248894C003976C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD74A03D2248894C003976C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD1CA302224B186D00D5BDD0 /* OperationQueueDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DD1CA307224B558900D5BDD0 /* OperationBasics.md */,
+				DD1CA303224B18C100D5BDD0 /* LoadImage.swift */,
+				DD1CA305224B230300D5BDD0 /* LoadImageOperation.swift */,
+			);
+			path = OperationQueueDemo;
+			sourceTree = "<group>";
+		};
 		DD74A02F2248894C003976C2 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +90,7 @@
 		DD74A03A2248894C003976C2 /* MultiThreadDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DD1CA302224B186D00D5BDD0 /* OperationQueueDemo */,
 				DD74A063224A084F003976C2 /* DispatchDemo */,
 				DD74A04F2249DA65003976C2 /* ThreadDemo */,
 				DD74A03B2248894C003976C2 /* AppDelegate.swift */,
@@ -142,6 +159,7 @@
 				TargetAttributes = {
 					DD74A0372248894C003976C2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -171,6 +189,7 @@
 				DD74A0462248894D003976C2 /* LaunchScreen.storyboard in Resources */,
 				DD74A0432248894D003976C2 /* Assets.xcassets in Resources */,
 				DD74A0412248894C003976C2 /* Main.storyboard in Resources */,
+				DD1CA308224B558900D5BDD0 /* OperationBasics.md in Resources */,
 				DD74A069224A3901003976C2 /* DispatchBasics.md in Resources */,
 				DD74A05D2249DDBA003976C2 /* ThreadBasics.md in Resources */,
 			);
@@ -186,7 +205,9 @@
 				DD74A067224A2F60003976C2 /* BackgroundTimeTest.swift in Sources */,
 				DD74A05F2249EE72003976C2 /* ThreadSynchronization.swift in Sources */,
 				DD74A03E2248894C003976C2 /* ViewController.swift in Sources */,
+				DD1CA306224B230300D5BDD0 /* LoadImageOperation.swift in Sources */,
 				DD74A0552249DBCC003976C2 /* DownloadImage.swift in Sources */,
+				DD1CA304224B18C100D5BDD0 /* LoadImage.swift in Sources */,
 				DD74A05B2249DCD8003976C2 /* ThreadCommunacation.swift in Sources */,
 				DD74A0532249DB84003976C2 /* ExitThread.swift in Sources */,
 				DD74A03C2248894C003976C2 /* AppDelegate.swift in Sources */,
@@ -347,7 +368,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-11.MultiThreadDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -365,7 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-11.MultiThreadDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

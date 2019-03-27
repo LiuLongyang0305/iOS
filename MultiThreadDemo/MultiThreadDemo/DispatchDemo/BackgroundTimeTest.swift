@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 extension ViewController {
-    func initNoticicationCentre()  {
+    func testBackGroundTask()  {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.enterBack), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     

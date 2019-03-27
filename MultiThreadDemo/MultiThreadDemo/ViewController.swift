@@ -23,17 +23,20 @@ class ViewController: UIViewController {
     public var submitSyncToSerialQueue : UIButton!
     public var submitSyncToConcurrentQueue : UIButton!
     public var executeButton : UIButton!
+    public var operationQueue : OperationQueue!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //        testMultiThread()
         //        testExitThread()
-        //        downloadImageByThread()
+        //        testDownloadImageByThread()
         //        testThreadPriority()
         //        testConcurrentDrawMoney()
         //        testProducersAndConsumers()
         //        testDispatchQueue()
-        initNoticicationCentre()
+        //        testBackGroundTask()
+        //        testLoadImageOnOperationQueue()
+        testImplementOperation()
     }
     
     

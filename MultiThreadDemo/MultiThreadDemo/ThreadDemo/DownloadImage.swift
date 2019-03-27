@@ -47,7 +47,7 @@ extension ViewController {
         thread.start()
     }
     
-    func downloadImageByThread() {
+    func testDownloadImageByThread() {
         initView()
     }
 }
