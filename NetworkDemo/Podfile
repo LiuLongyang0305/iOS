@@ -1,0 +1,7 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'NetworkDemo' do
+    source 'https://github.com/CocoaPods/Specs.git'
+    pod 'ReachabilitySwift'
+end
