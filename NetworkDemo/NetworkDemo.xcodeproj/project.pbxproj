@@ -15,6 +15,9 @@
 		DD1CA320224B5BAA00D5BDD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1CA31E224B5BAA00D5BDD0 /* LaunchScreen.storyboard */; };
 		DD1CA32B224C969C00D5BDD0 /* CheckNetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CA32A224C969C00D5BDD0 /* CheckNetworkStatus.swift */; };
 		DD1CA32E224CB56E00D5BDD0 /* GetDataFromServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1CA32D224CB56E00D5BDD0 /* GetDataFromServer.swift */; };
+		DD1CA332224E430400D5BDD0 /* URLSession.md in Resources */ = {isa = PBXBuildFile; fileRef = DD1CA330224E430400D5BDD0 /* URLSession.md */; };
+		DD1CA333224E430400D5BDD0 /* FetchData.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1CA331224E430400D5BDD0 /* FetchData.png */; };
+		DD1CA335224E436C00D5BDD0 /* FetchDataHandleDetails.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1CA334224E436C00D5BDD0 /* FetchDataHandleDetails.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		DD1CA321224B5BAA00D5BDD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD1CA32A224C969C00D5BDD0 /* CheckNetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetworkStatus.swift; sourceTree = "<group>"; };
 		DD1CA32D224CB56E00D5BDD0 /* GetDataFromServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataFromServer.swift; sourceTree = "<group>"; };
+		DD1CA330224E430400D5BDD0 /* URLSession.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = URLSession.md; sourceTree = "<group>"; };
+		DD1CA331224E430400D5BDD0 /* FetchData.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FetchData.png; sourceTree = "<group>"; };
+		DD1CA334224E436C00D5BDD0 /* FetchDataHandleDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FetchDataHandleDetails.png; sourceTree = "<group>"; };
 		FE3D0A45F23A03B4DF28921F /* Pods-NetworkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkDemo.debug.xcconfig"; path = "Target Support Files/Pods-NetworkDemo/Pods-NetworkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +70,7 @@
 		DD1CA309224B5BA800D5BDD0 = {
 			isa = PBXGroup;
 			children = (
+				DD1CA32F224E428C00D5BDD0 /* URLSessionDocument */,
 				DD1CA314224B5BA800D5BDD0 /* NetworkDemo */,
 				DD1CA313224B5BA800D5BDD0 /* Products */,
 				471334E3A58163B8374B6307 /* Pods */,
@@ -108,6 +115,16 @@
 				DD1CA32D224CB56E00D5BDD0 /* GetDataFromServer.swift */,
 			);
 			path = URLSessionDemo;
+			sourceTree = "<group>";
+		};
+		DD1CA32F224E428C00D5BDD0 /* URLSessionDocument */ = {
+			isa = PBXGroup;
+			children = (
+				DD1CA334224E436C00D5BDD0 /* FetchDataHandleDetails.png */,
+				DD1CA331224E430400D5BDD0 /* FetchData.png */,
+				DD1CA330224E430400D5BDD0 /* URLSession.md */,
+			);
+			path = URLSessionDocument;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +189,10 @@
 			files = (
 				DD1CA320224B5BAA00D5BDD0 /* LaunchScreen.storyboard in Resources */,
 				DD1CA31D224B5BAA00D5BDD0 /* Assets.xcassets in Resources */,
+				DD1CA333224E430400D5BDD0 /* FetchData.png in Resources */,
+				DD1CA335224E436C00D5BDD0 /* FetchDataHandleDetails.png in Resources */,
 				DD1CA31B224B5BA800D5BDD0 /* Main.storyboard in Resources */,
+				DD1CA332224E430400D5BDD0 /* URLSession.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
