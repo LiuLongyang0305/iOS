@@ -8,32 +8,38 @@
 
 import Foundation
 import UIKit
-extension ViewController :URLSessionDataDelegate{
-
-
+extension ViewController{
+    
+    
     func testURLSessionGetDataFromServer()  {
         initURLSession()
+        startLoad(true)
     }
     func initURLSession()  {
         showView = UITextView(frame: CGRect(x: 10, y: 40, width: view.bounds.width - 20, height: 100))
         showView.backgroundColor = UIColor.lightGray
         view.addSubview(showView)
-        
-        let url = URL(string: "https://996.icu/manifest.json")
-        
-        totaldata = NSMutableData()
-        let request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 2)
-        let configuration = URLSessionConfiguration.default
-        session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-        if nil == session {
-            return
-        }
-        let task = session.dataTask(with: request)
-        task.resume()
     }
+    func startLoad(_ handleDetail : Bool)  {
+        var task : URLSessionDataTask? = nil
+        if !handleDetail{
+            let request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 2)
+            task = session.dataTask(with: request)
+        } else {
+            task = sessionWithDetail.dataTask(with: url!)
+            
+        }
+        task?.resume()
+    }
+}
+/*
+ "{\n  \"name\": \"996.icu\",\n  \"short_name\": \"996.icu\",\n  \"start_url\": \"./index.html\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#de335e\",\n  \"theme_color\": \"#de335e\"\n}\n"
+ */
+
+extension ViewController : URLSessionDataDelegate{
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
-       totaldata.append(data)
+        totaldata.append(data)
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
@@ -47,10 +53,13 @@ extension ViewController :URLSessionDataDelegate{
         print("\(content!.debugDescription)")
         showView.performSelector(onMainThread: #selector(setter: UITextView.text), with: content, waitUntilDone: true)
     }
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didBecome downloadTask: URLSessionDownloadTask) {
-        print("====  \(#function) =====")
+    
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+        guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+            completionHandler(.cancel)
+            return
+        }
+        completionHandler(.allow)
     }
 }
-/*
- "{\n  \"name\": \"996.icu\",\n  \"short_name\": \"996.icu\",\n  \"start_url\": \"./index.html\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#de335e\",\n  \"theme_color\": \"#de335e\"\n}\n"
- */
+
