@@ -185,3 +185,7 @@ task.resume()
 ```
 
 You can also upload data by setting a delegate.
+
+### Uploading Streams of Data
+
+#### Overview of Uploading stream

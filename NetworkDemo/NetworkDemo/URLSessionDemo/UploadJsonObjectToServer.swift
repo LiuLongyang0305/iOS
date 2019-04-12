@@ -31,7 +31,7 @@ extension ViewController {
         let task = URLSession.shared.uploadTask(with: request, from: prepareUploadData()) { (data, response, error) in
             if let err = error {
                 print("Error : \(err.localizedDescription)")
-                return
+                return 
             }
             guard let res = response as? HTTPURLResponse,(200...299).contains(res.statusCode ) else {
                 print("Server Error")
