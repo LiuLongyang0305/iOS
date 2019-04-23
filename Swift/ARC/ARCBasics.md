@@ -84,14 +84,14 @@ apartment?.tenant = john
 ```
 
 上述代码执行完成，实例之间相互关系如下：
-![循环引用1](./pictures/StrongReferenceCycle.png)
+![循环引用1](./StrongReferenceCycle.png)
 
 ```swift
 john = nil
 apartment = nil
 ```
 
-![循环引用2](./pictures/StrongReferenceCycle2.png)
+![循环引用2](./StrongReferenceCycle2.png)
 
 很明显两个实例间的强引用关系并没有解除，两个实例的强引用计数都不是0，ARC机制也无法把两个实例所占内存释放，这会造成内存泄漏。
 
@@ -137,7 +137,7 @@ john!.appartment = apartment
 apartment!.tenant = john
 ```
 
-![弱引用1](./pictures/WeakReference1.png)
+![弱引用1](./WeakReference1.png)
 
 ```swift
 print("Set John = nil")
@@ -146,7 +146,7 @@ print("Set apartment = nil")
 apartment = nil
 ```
 
-![弱引用1](./pictures/WeakReference2.png)
+![弱引用1](./WeakReference2.png)
 
 运行结果：
 
@@ -194,14 +194,14 @@ var john: Customer? = Customer(name: "John")
 john!.card = CreditCard(number: 1234_5678_9012_3456, customer: john!)
 ```
 
-![Unowned Reference](./pictures/UnownedReference1.png)
+![Unowned Reference](./UnownedReference1.png)
 
 ```swift
 print("Set john = nil")
 john = nil
 ```
 
-![Unowned Reference](./pictures/UnownedReference2.png)
+![Unowned Reference](./UnownedReference2.png)
 
 运行结果：
 
@@ -297,7 +297,7 @@ set paragraph = nil
 
 这里造成循环引用的本质原因是闭包也是引用类型。当你把包赋值给类的属性，就相当于设置了一个强引用指向闭包，进而类的实例和闭包之间形成循环引用，互相保证对方不会被释放掉。
 
-![ClosureReferenceCycle](./pictures/ClosureReferenceCycle.png)
+![ClosureReferenceCycle](./ClosureReferenceCycle.png)
 
 ### Resolving Stong Reference Cycles for Clousures
 
@@ -343,4 +343,4 @@ p is being deinitialized!
 
 这种情况下，形成的引用关系如下：
 
-![CaptureList](./pictures/CaptureList.png)
+![CaptureList](./CaptureList.png)
