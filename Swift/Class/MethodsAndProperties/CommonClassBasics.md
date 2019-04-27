@@ -53,9 +53,7 @@ viewMode.resolution.width = 1280
 
 ### 结构体和枚举都是值类型
 
-```txt
 A value type is a type whose value is copied when it is assigned to a variable or constant, or it's passed to a function. Reference types are not copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used.
-```
 
 swift中所有的基本类型都是值类型，包括整型，浮点型，布尔型，字符串，数组，字典，集合，底层实现方式都是结构体。结构体和枚举都是值类型，任何时候创建结构体和枚举实例，不管他们的属性的类型是什么，都会复制。不过集合类型在实现上做了优化，即所谓的copy-on-write机制。
 
@@ -127,9 +125,7 @@ The addresses of arr and arrCopy : 0x107acb750 0x60000355e180.
 
 ### 类是引用类型
 
-```txt
 Reference types are not copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used.
-```
 
 ```swift
 let tenEighty = ViewMode()
@@ -348,9 +344,7 @@ struct Cuboid {
 
 ## 属性观察者(Property Observer)
 
-```txt
 Property observers observe ang respond to changes in a property value. Property observers are called every time a property's value is set, even if the new value is the same as the property's current value.
-```
 
 开发者可以给任意自定义的存储属性添加observer，可以给任意继承的的属性（存储属性和计算属性）添加观察者。但是没有必要为nonoverriden的计算属性添加观察者，因为你可以在setter函数中注意到属性数值的变化并做出反应。
 
@@ -491,9 +485,7 @@ max = 10 leftChannelCurrentLevel = 7
 
 ## Method(方法)
 
-```txt
 Methods are functions that are associated with a particular type. Classes, structures, and enumerations can call instance methods and type methods。In swift，you can choose whether to define a class, structure, or enumeration, and still have the flexibility to define methods on type you create.
-```
 
 ### Instance Methods(实例方法)
 
@@ -621,9 +613,9 @@ current state = off
 
 ### 类型方法(Type Methods)
 
-```txt
+
 Instance methods are methods that are called on an instance of a particular type. You can also define methods are called on the type itself. These kind of methods are called type methods. You indicate type methods by writting the static keyword before the method's function keyword. Classes may also use the class keyword to allow subclasses to override the superclass's implementation of that method.
-```
+
 
 类方法中，隐式的self属性指向类型本身，而不是指向类的一个实例。因此你可以像在实例方法中使用self属性那样在类方法中使用self属性，并不会产生含糊的语义。类方法中使用的方法和属性一定也是类方法和类属性，所谓的type-level methods and properties。所以类方法中的属性和方法可以省略掉类名的前缀。而实例方法中调用类属性或者类方法都必须添加类名作为前缀。
 
