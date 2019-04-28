@@ -78,7 +78,7 @@ Now cinama is 2048 pixels width, hd is still 1920 pixels width!
 
 内存布局：
 
-![ValueTypeMemoryLayout](./ValueTypeMemoryLayout.png)
+![ValueTypeMemoryLayout](./MethodsAndProperties/ValueTypeMemoryLayout.png)
 
 相同的机制在枚举类型中的应用：
 
@@ -150,7 +150,7 @@ tenEight's frame rate = 30.0 alsoTenEighty's frame rate = 30.0
 
 很明显我们修改了alsoTenEighty的frameRate值，tenEighty的对应值也跟着改变，因为类是引用类型，他两个指向同一块内存。tenEighty和alsoTenEighty是同一个实例的不同名字，
 
-![ReferenseTypeMemoryLayout](./ReferenseTypeMemoryLayout.png)
+![ReferenseTypeMemoryLayout](./MethodsAndProperties/ReferenseTypeMemoryLayout.png)
 
 需要注意，alsoTenEighty和tenEighty都是常量，但是我们仍然可以修改frameRate的值，这是因为enEighty和alsoTenEighty的值的确没有发生改变，他们并不是ViewMode的instance，而是都指向这个实例，可以理解为保存的是实例的指针。
 
@@ -202,7 +202,7 @@ rangeOfThreeItems.firstValue = 6
 
 ### 结构体常量的存储属性
 
-![StoredPropertiesOfConstantStructureInstance](./StoredPropertiesOfConstantStructureInstance.png)
+![StoredPropertiesOfConstantStructureInstance](./MethodsAndProperties/StoredPropertiesOfConstantStructureInstance.png)
 
 根本原因是结构体是值类型，常量结构体的存储属性一定都是常量。对于引用类型(Class)则不然不然,比如下面代码就没有问题：
 
@@ -441,7 +441,7 @@ class SubClass : SuperClass {
 
 另外：static修饰的计算变量不可以备重载：
 
-![StaticProperyExample](./StaticProperyExample.png)
+![StaticProperyExample](./MethodsAndProperties/StaticProperyExample.png)
 
 ### Querying and Setting Type Properties
 
@@ -538,7 +538,7 @@ if somePoint.isToTheRightOf(x: 1.0) {
 
 结构体和枚举是值类型，默认在实例方法中不能修改他们的属性值。
 
-![ModifyingPropertiesOfValueType](./ModifyingPropertiesOfValueType.png)
+![ModifyingPropertiesOfValueType](./MethodsAndProperties/ModifyingPropertiesOfValueType.png)
 
 如果你想在实例方法中修改属性值的话，你可以选择用关键词mutating修饰方法，这个方法就具有修改属性值的能力了，当方法执行结束的时候任何改变都会被写回到（written back to）原始的结构体当中。甚至开发者可以再这类方法中直接使用一个新的实例给隐式属性self赋值，在方法运行结束的时候这个新的实例会替换（replace）已经存在的那个实例。
 
@@ -558,7 +558,7 @@ fixedPoint.moveBy(x: 2.0, y: 3.0)
 
 需要注意：结构体常量不能调用mutating修饰的实例方法，因为他们的属性值不能够改变。
 
-![MutatingMethodOnConstantStructure](./MutatingMethodOnConstantStructure.png)
+![MutatingMethodOnConstantStructure](./MethodsAndProperties/MutatingMethodOnConstantStructure.png)
 
 ### Assigning to Self Within a Mutating Method
 
