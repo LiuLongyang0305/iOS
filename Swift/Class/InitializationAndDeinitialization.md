@@ -173,7 +173,7 @@ print("The coordinate of point is (\(point.x),\(point.y)).")
 
 运行结果：
 
-```txt
+```text
 Item : nil,1,false
 The coordinate of point is (10,20)
 ```
@@ -240,7 +240,7 @@ print(centerRect.toString())
 
 运行结果：
 
-```txt
+```text
 Rect : origin = (0.0,0.0), size = (width : 0.0, height : 0.0)
 Rect : origin = (2.0,2.0), size = (width : 5.0, height : 5.0)
 Rect : origin = (2.5,2.5), size = (width : 3.0, height : 3.0)
@@ -513,7 +513,7 @@ if nil != zeroSock {
 
 运行结果：
 
-```txt
+```text
 Start create CartItem!
 Start create Product!
 Succeed to create twoSock!
@@ -670,7 +670,7 @@ chick = nil
 
 运行结果：
 
-```txt
+```text
 chick is to be deallocked!
 bird is to be deallocked
 ```

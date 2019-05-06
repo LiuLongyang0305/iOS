@@ -40,7 +40,7 @@ class Person {
 
 运行结果：
 
-```txt
+```text
 John is being initialized!
 ***** 1 ******
 ***** 2 ******
@@ -150,7 +150,7 @@ apartment = nil
 
 运行结果：
 
-```txt
+```text
 John is being initialized!
 Set John = nil
 John is being deinitialized!
@@ -205,7 +205,7 @@ john = nil
 
 运行结果：
 
-```txt
+```text
 Set john = nil
 John is being deinitialized!
 Card 1234567890123456 is being deinitialized!
@@ -251,7 +251,7 @@ country = nil
 
 运行结果：
 
-```txt
+```text
 Canada's capital city is called Ottawa
 Canada is being deinitialized!
 Ottawa is being deinitialized!
@@ -290,7 +290,7 @@ paragraph = nil
 
 运行结果：
 
-```txt
+```text
 <p>hello, aorld!</p>
 set paragraph = nil
 ```
@@ -334,7 +334,7 @@ print("set paragraph = nil")
 
 运行结果：
 
-```txt
+```text
 paragraph = nil
 <p>hello, aorld!</p>
 set paragraph = nil
