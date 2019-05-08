@@ -237,3 +237,23 @@ enum Shape {
     }
 }
 ```
+
+## Enumeration with Mutating Function
+
+```swift
+enum TristateSwitch : String {
+    case off = "off"
+    case low = "low"
+    case high = "high"
+    mutating func next(){
+        switch self {
+        case .high:
+            self = .off
+        case .off:
+            self = .low
+        case .low:
+            self = .high
+        }
+    }
+}
+```
