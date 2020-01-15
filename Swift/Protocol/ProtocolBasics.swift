@@ -1,8 +1,8 @@
 import Foundation
 /*
  A protocal defines a blueprint of methods, properties and other requirements that suit a particular 
- task or piece od functionality, and can be adopted by a class, structure, or enumeration. Any type 
- hat satisfies the requirements of a protocol is said to confrom to that protocol.
+ task or piece of functionality, and can be adopted by a class, structure, or enumeration. Any type 
+ that satisfies the requirements of a protocol is said to confrom to that protocol.
  */
 
 //Syntax
