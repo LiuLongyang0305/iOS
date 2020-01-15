@@ -288,5 +288,5 @@ var vector = Vector2D(x: 1, y: 2)
  let second = Vector2D(x: 3, y: 7)
  let third = Vector2D(x: 2, y: 2)
  //根据优先级组：先算 +- 再算 *^
- print("vector: \((first +- second *^ third).description)") //vector: (x: 7, y: -51)
+ print("vector: \((first +- second *^ third).description)") //vector: (x: 8, y: 29)
 ```
