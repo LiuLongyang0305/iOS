@@ -131,7 +131,7 @@ struct Task {
     var description: String
     var completed: Bool
 }
-var toDoList = [Task(description: "Practice ping-pong.", completed: false),Task(description: "Buy a private costume.", completed: true), Task(description: "Visit Bouton in the Fall.", completed: false)]
+var toDoList = [Task(description: "Practice ping-pong.", completed: false),Task(description: "Buy a private costume.", completed: true), Task(description: "Visit Boston in the Fall.", completed: false)]
 
 func makeIndex() -> Int {
     print("Made an iindex")
