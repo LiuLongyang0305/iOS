@@ -387,6 +387,69 @@ old value = 360
 1. 父类属性的观察者：在父类构造完成之前不会被调用。
 2. 如果把带有属性观察者的属性作为in-out参数传递，那么willSet和didSet一定会被调用。原因：函数调用结束的时候，数值会再次写入到属性当中。
 
+## 属性包装器
+
+属性包装器实在管理属性如何存储的代码和定义属性的代码的之间添加了一个分割层。举例来说，如果你的属性需要线程安全检查或者需要在数据库当中存储其基本数据，那么你就需要给每个属性添加同样的逻辑代码。**使用属性包装器时，你只需要写一次管理代码，然后再多个属性上面复用**。
+
+定义属性包装器，需要传建一个包含`wrappedValue`的结构体、枚举或者类，如果不包含则会提示`Property wrapper type 'TwelveOrLess' does not contain a non-static property named 'wrappedValue`。
+
+```swift
+@propertyWrapper
+struct TwelveOrLess {
+    private var number: Int
+    init() {
+        self.number = 0
+    }
+    var wrappedValue: Int {
+        get { return number}
+        set { number = min(newValue, 12) }
+    }
+}
+```
+
+通过在属性前面加上包装器的名字作为特性的方式笔译吧包装器应用到属性上去。
+
+```swift
+struct SmallRectangle {
+    @TwelveOrLess var height: Int
+    @TwelveOrLess var width: Int
+    var description: String {
+        get {
+            return "width = \(width)   height: \(height)"
+        }
+    }
+}
+
+var  rectangle = SmallRectangle()
+print(rectangle.description) // width = 0   height: 0
+rectangle.height = 10
+print(rectangle.description) // width = 0   height: 10
+rectangle.height = 24
+print(rectangle.description) // width = 0   height: 12
+```
+
+当你把包装器应用到一个属性上时，编译器会自动合成两部分代码：提供包装器存储的代码和通过包装器访问属性的代码。属性包装器负责包装值的存储，因此编译器并没有合成相关的代码。可以在不使用**特性语法(`@TwelveOrLess`)**的情况下使用属性包装器,方法是：**把属性显式的包装在`TwelveOrLess`的结构中**。
+
+```swift
+struct SmallRectangle {
+    private var _height = TwelveOrLess()
+    private var _width  = TwelveOrLess()
+    var height: Int {
+        get { return _height.wrappedValue }
+        set { _height.wrappedValue = newValue }
+    }
+    var width: Int {
+        get { return _width.wrappedValue }
+        set { _width.wrappedValue = newValue}
+    }
+    var description: String {
+        get {
+            return "width = \(width)   height: \(height)"
+        }
+    }
+}
+```
+
 ## 全局变量和局部变量
 
 存储属性------->存储变量
@@ -613,9 +676,7 @@ current state = off
 
 ### 类型方法(Type Methods)
 
-
 Instance methods are methods that are called on an instance of a particular type. You can also define methods are called on the type itself. These kind of methods are called type methods. You indicate type methods by writting the static keyword before the method's function keyword. Classes may also use the class keyword to allow subclasses to override the superclass's implementation of that method.
-
 
 类方法中，隐式的self属性指向类型本身，而不是指向类的一个实例。因此你可以像在实例方法中使用self属性那样在类方法中使用self属性，并不会产生含糊的语义。类方法中使用的方法和属性一定也是类方法和类属性，所谓的type-level methods and properties。所以类方法中的属性和方法可以省略掉类名的前缀。而实例方法中调用类属性或者类方法都必须添加类名作为前缀。
 
@@ -631,7 +692,7 @@ struct LevelTracker{
     static func isUnlocked(_ level : Int) -> Bool {
         return level <= highestUnlockedLevel
     }
-    
+
     @discardableResult
     mutating func advance(to level : Int) -> Bool {
         if LevelTracker.isUnlocked(level) {
